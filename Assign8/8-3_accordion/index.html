@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assign 8 - Accordion</title>
+ <link href="/styles/styles/normalize.css" type="text/css" rel="stylesheet">
+  <link href="/styles/accordstyles.css" type="text/css" rel="stylesheet">
+   <script src="/styles/jquery-2.1.4.min.js"></script>
+     <script>       
+       $(document).ready(function() {
+		    function hideAccord() {
+               $("#one, #two, #three, #four").hide();
+            }                   
+            function closeAccord() {
+               $("#one, #two, #three, #four").slideUp();
+			    //alert('called')
+                $(".accordTop span").text("+");
+            } 
+            hideAccord();
+            $(".accordTop").on("click", function() {
+ 			    //alert($(this).attr('id'))
+				var child_id = $(this).attr('id')
+				if (child_id == 'heading_1') {
+				remove_id = '#one';
+				} else if (child_id == 'heading_2') { 
+				remove_id = '#two';
+				} else if (child_id == 'heading_3') {
+				remove_id = '#three';
+				} else if (child_id == 'heading_4') {
+				remove_id = '#four';
+ 				}
+				var thisClass = String($(this).attr('class'))
+                if ($(this).hasClass("accordTopActive")) {
+                    closeAccord();
+					$(this).removeClass("accordTopActive")
+                } else {
+                    $(remove_id).slideDown("slow");
+                    $(this)[0].firstElementChild.innerText = "-";
+                    $(this).addClass("accordTopActive");
+                }
+            });
+        }); 
+    </script>
+</head>
+<body>
+<h1>jQuery Accordion</h1>
+    
+   <div id="accordContainer">
+   <div class="contentContainer">
+   <h2 class="accordTop" id="heading_1"><span>+</span> Why Pima?</h2>
+    <div class="accordContent" id="one">
+   <p>Lorem ipsum dolor sit amet, ei dico viderer mel, nam omnes tempor malorum at. Accumsan mandamus pro te. Sed labore possit cu, at ancillae definitionem mei. Ius quod ubique ei. Per admodum blandit suscipiantur te, cu nec tale sanctus noluisse.
+Te vis dolores expetenda, ex usu liber tincidunt mnesarchum. No amet fugit sanctus mel, est omnis inermis ullamcorper no, placerat constituto vituperatoribus cum te. Ridens dicunt te pro, te legere facilisi efficiantur sit. At prompta fabellas adversarium eos, erant conceptam definitiones mea ex. Tale nostrud honestatis his ex, vim ancillae voluptatibus eu. Sed ex error temporibus, audire argumentum ne usu, alii labitur nam te.</p>
+   </div>
+  <h2 class="accordTop" id="heading_2"><span>+</span> Apply</h2>
+  <div class="accordContent" id="two">
+  <p>Lorem ipsum dolor sit amet, per ne habeo sonet, has id ridens pertinacia, at vel graeco melius audire. Mel impetus cotidieque ei. Te mei purto eros mollis. Id his eius dignissim omittantur. Omnis electram at sea, autem elitr est in.
+Feugait expetenda assentior ne quo. Facer iisque ea vix, nam mutat volutpat constituto ei. Cum nusquam apeirian menandri ut, probo assentior sea eu, decore vocibus eloquentiam eu sea. Quo et veri homero epicurei, usu rebum imperdiet ad. Nam inciderint quaerendum interpretaris in, postulant honestatis mea te. Cu nihil melius vocibus eos, cum te albucius accusata.</p>
+  </div>
+  <h2 class="accordTop" id="heading_3"><span>+</span> Take Assessments</h2>
+   <div class="accordContent" id="three">
+  <p>Lorem ipsum dolor sit amet, cu dicam accusam propriae mei, ex enim meis fabellas eam. Eam no prompta disputando, sea an dicat eirmod facilisi, per case vituperata ne. Aeterno regione ei mea, est vide putant no. Vocent option persecuti id nec.
+Quo in feugiat molestiae voluptaria, ipsum nulla definiebas his ea. Quando perfecto invenire nam id, eam te alterum appellantur. Ius no partem mandamus. Amet tale et nam, quod laboramus et pri. Ne hinc aeterno delectus sea, usu virtute delicata mediocritatem at, cu eligendi honestatis duo.</p>
+    </div>
+<h2 class="accordTop" id="heading_4"><span>+</span> New Student Orientation</h2>
+   <div class="accordContent" id="four">
+  <p>Lorem ipsum dolor sit amet, cu dicam accusam propriae mei, ex enim meis fabellas eam. Eam no prompta disputando, sea an dicat eirmod facilisi, per case vituperata ne. Aeterno regione ei mea, est vide putant no. Vocent option persecuti id nec.
+Quo in feugiat molestiae voluptaria, ipsum nulla definiebas his ea. Quando perfecto invenire nam id, eam te alterum appellantur. Ius no partem mandamus. Amet tale et nam, quod laboramus et pri. Ne hinc aeterno delectus sea, usu virtute delicata mediocritatem at, cu eligendi honestatis duo.</p>
+    </div>                 
+    </div>
+    </div>
+    </body>
+</html>

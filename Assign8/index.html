@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 8 FEWD2-644</title>
+  <link href="styles/normalize.css" type="text/css" rel="stylesheet">
+  <link href="styles/styles.css" type="text/css" rel="stylesheet">
+    <script src="styles/jquery-2.1.4.min.js"></script>
+    <script>
+    $(function() { 
+//Step 1 Use click method to display alert "button has been clicked"
+        $("#btn1").click(function() {
+            alert("The Step 1 button has been clicked");
+        });
+        
+//Step 2 Use the bind method to display alert "button has been clicked"
+        $("#btn2").bind("click", function() {
+            alert("The Step 2 button has been clicked");
+        });
+        
+//Step 3 Use the .on method to display alert "button has been clicked"
+         $("#btn3").on("click", function() {
+            alert("The Step 3 button has been clicked");
+        });
+
+//Step 4 Use the .on method to display alert "button has been clicked" for either of 2 buttons
+         $("body").on("click", ".btn4", function(event) {
+            alert("A Step 4 button has been clicked");
+        });
+      
+        
+//Step 5 Create div; use jQuery to set div to 400 px wide and tall; Attach the click, mouseenter and mouseleave using .on; display alert for each event.
+            $("div.step5").width(400);
+            $("div.step5").height(400);
+            $("div.step5").on({
+                "click": function() {alert( "Div was clicked!" ); },
+                "mouseenter": function() {alert( "Mouse entered div!" ); },
+                "mouseleave": function() {alert( "Mouse left div!" ); }
+            });
+        
+//Step 6 Rewrite #5 using span tag for message.
+            $("div.step6").width(400);
+            $("div.step6").height(400);
+            $("div.step6").on({
+                "click": function() {$("span").text("Div was clicked!"); },
+                "mouseenter": function() {$("span").text("Mouse entered div!"); },
+                "mouseleave": function() {$("span").text("Mouse left div!" ); }
+            });
+//Step 7 Create link and set its href attribute to google.com. When clicked, first prevent redirect to web site. Second, programmatically have link change to red. Third display the name of the node that triggered the event in an alert box.
+        $("div.step7 a").click(function(event){
+            event.preventDefault();
+            $("div.step7 a").css("color", "red)");
+            alert("Name of node that was triggered is " + event.currentTarget.nodeName);
+        });
+        
+//Step 8  Create a div tag within the web page. As the user resizes the browser, display the width and height of the browser within the div tag.
+        $(window).resize(function() {
+            $("div.step8").html("Width= " + $(window).width() + " Height= " + $(window).height());
+         });
+        
+ 
+// Step 9  Create a text field using the <input> tag. When the input has focus, set the background to a light gray color. When the input does not have focus, set the background color back to white.
+        $("input.step9").on({
+            focus: function() {$("input.step9").css("background-color", "#e6e6e6");
+                },
+            blur: function() {$("input.step9").css("background-color", "white");
+                }
+        });
+//Step 10  Add a form tag within the web page complete with 2 input fields; one that collects name and a second that collects an email. Add a submit button. When user submits form, if any of the 2 fields is empty, display an alert box to the user indicating that the fields are required. give the field that the user left empty a red border. If both field have values in them, set their borders to green.
+        var myname = $("#myname");
+        var email = $("#email");
+        $("#submit").on("click", function(event) {
+            event.preventDefault;
+            if (myname.val() === "" || email.val() === "") {
+                
+                 if (email.val() === "") {
+                    email.css("border", "1px solid red");
+                } else {
+                    email.css("border", "1px solid green");
+                }
+                
+                
+                if (myname.val() === "") {
+                    myname.css("border", "1px solid red");
+                } else {
+                    myname.css("border", "1px solid green");
+                }
+               
+                alert("You must complete both fields");               
+          } else {
+              myname.css("border", "1px solid green");
+              email.css("border", "1px solid green");
+          }
+        });
+        
+        
+    });   
+    
+    </script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body>
+	<main>
+	 <p>Form for Step 10:
+        <form id=step10>
+            <input id="myname" type="text" placeholder="Name"><br>
+            <input id="email" type="text" placeholder="email"><br>
+            <input id="submit" type="submit">
+        </form>
+    </p>
+    <br>
+	<p>
+		<button id="btn1">Step 1-Click Me</button>
+	</p>
+		
+    <p>
+        <button id="btn2">Step 2-Click Me</button>
+    </p>
+       
+    <p>
+        <button id="btn3">Step 3-Click Me</button>
+    </p>
+      
+    <p>
+        <button class="btn4">Step 4 Click Me-Button 1</button>
+        <button class="btn4">Step 4 Click Me-Button 2</button>
+    </p>
+       
+     <p>          
+        <div class="step5">My 400 x 400 div for step 5.</div>
+    </p>
+          
+    <p>          
+        <div class="step6">My 400 x 400 div for step 6.</div>
+        <span></span>
+    </p> 
+        
+    <p>  
+        <div class="step7">         
+        <a href="http://www.google.com">Google</a>
+        </div>
+    </p>
+    
+    <p>          
+        <div class="step8">My Step 8 Div.</div>
+    </p>
+    
+    <p>          
+        <input class="step9" placeholder="Step 9 Gray on focus"></input>
+    </p>
+    
+   
+    
+    
+    
+		<footer></footer>
+	</main>
+</body>
+</html>

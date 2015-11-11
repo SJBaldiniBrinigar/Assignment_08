@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assign 8 - Slideshow</title>
+ <link href="/styles/styles/normalize.css" type="text/css" rel="stylesheet">
+  <link href="/styles/slidestyles.css" type="text/css" rel="stylesheet">
+    <script src="/styles/jquery-2.1.4.min.js"></script>
+    <script>
+        
+        function hideImg() {
+            $("#first, #second, #third, #fourth, #fifth, #sixth, #seventh").hide();
+              }
+        $(document).ready(function() {
+            hideImg();
+                                        
+        $("#first").show(); //first image should show
+         
+        $("a").on("click", function() {    //should hide current and fade in new selected pic.
+                var imgNum = $(this).attr("href");
+                hideImg();
+                $(imgNum).fadeIn("slow");
+                $("a.show").removeClass("show");
+                $(this).addClass("show");
+            });
+        });
+       
+    </script>
+    
+</head>
+
+    <body>
+    <h1>jQuery Slideshow</h1>
+        <div class=container>
+           <div id="images">
+             <div id="first">
+                  <img src="/images/h_gorilla.jpg" alt="gorilla">
+              </div>
+              
+              <div id="second">
+                  <img src="/images/h_hippo.jpg" alt="hippos">
+              </div>
+              
+              <div id="third">
+                  <img src="/images/h_leopard.jpg" alt="leopard cub">
+              </div>
+              
+              <div id="fourth">
+                  <img src="/images/h_polarbear.jpg" alt="polar bears">
+              </div>
+              
+              <div id="fifth">
+                  <img src="/images/h_tiger.jpg" alt="tiger">
+              </div>
+              
+              <div id="sixth">
+                  <img src="/images/h_leopard2.jpg" alt="leopard">
+              </div>
+              
+              <div id="seventh">
+                  <img src="/images/h_whiteleopard.jpg"
+              </div>
+            </div>
+              <p>&nbsp</p>
+              <div id="count">
+                  <a class="active" href="#first">1</a>
+                  <a href="#second">2</a>
+                  <a href="#third">3</a>
+                  <a href="#fourth">4</a>
+                  <a href="#fifth">5</a>
+                  <a href="#sixth">6</a>
+                  <a href="#seventh">7</a>
+              </div>               
+           </div>
+                  
+
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Assign 8 - Tabs</title>
+ <link href="/styles/styles/normalize.css" type="text/css" rel="stylesheet">
+  <link href="/styles/tabstyles.css" type="text/css" rel="stylesheet">
+    <script src="/styles/jquery-2.1.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var content = $(".folderContent");
+            
+           $(".folder").on("click", function() {
+               content.addClass("hidden")
+                $(".folder").removeClass("active");
+                $(this).addClass("active");
+          
+            
+                if ($(this).hasClass("folder1")) {
+                    $(".t1").removeClass("hidden");
+                } else if ($(this).hasClass("folder2")) {
+                    $(".t2").removeClass("hidden");
+                } else if ($(this).hasClass("folder3")) {
+                    $(".t3").removeClass("hidden");
+                }
+            });
+        });
+         
+    </script>
+    
+</head>
+
+<body>
+    <h1>jQuery Tabs</h1>
+    
+   <div class="container">
+       <ul id="tabs">
+           <li class="folder1 folder active">Tab #1</li>
+           <li class="folder2 folder">Tab #2</li>
+           <li class="folder3 folder">Tab #3</li>
+       </ul>
+     <div class="folderContent t1">
+         <p>First folder: Te fabellas singulis mei, id dicit sensibus explicari eos. Timeam sensibus volutpat quo cu, eam cu eius feugait interesset. Purto adipisci omittantur ei vis, quo sensibus sadipscing ea. Quas habemus gubergren eu mea, dolor philosophia delicatissimi sit ea.</p>
+
+<p>Illud timeam per eu, quo at offendit sententiae dissentias. Te qui sumo praesent, sea id summo forensibus cotidieque. Modo deserunt intellegat mea ei. Quo in dicit graece vulputate, vidisse probatus ne sit, vel ea magna saperet. No magna putent mel, vel at malorum prompta detraxit.</p>
+
+<p>Cu nemore molestie intellegebat qui. Sit nibh probatus necessitatibus ad, mel at lorem soleat, eos te erant harum eruditi. Per no eripuit maiestatis complectitur. Ei vim errem recteque, ut cetero adolescens est, odio indoctum facilisis eu mel.</p>
+     </div>   
+     
+     
+     
+     <div class="folderContent t2 hidden"><p>Second Folder:  Eruditi dolorum has et. Mel debitis invenire ei, te mel facete hendrerit. Sanctus detraxit necessitatibus qui ex, mea ad graeci veritus, in soluta aperiam mediocritatem pri. Ei mel labitur deterruisset consequuntur. Sea debet error eloquentiam an. Nam reformidans consequuntur et. Consul intellegebat nec in.</p>
+
+<p>Duo et mundi tritani ceteros, ipsum iriure vivendo mel no. Maiestatis appellantur ius at. Sea velit iudico ad, munere consetetur ex cum. Qui sint decore comprehensam ne, in solet moderatius scribentur has. Ne vocent impetus disputando qui, eam ad augue copiosae splendide. Vix inermis eleifend efficiantur et.</p>
+
+<p>Malis congue cum ex, sed ad quod utinam, quo audire minimum no. Usu cu nominati intellegam, tempor sententiae his id. Dicit elitr quo ea, eum case semper id, at his esse singulis. Has enim aliquando ex, oblique dissentias est ei. Ius modus harum platonem ea.</p>         
+     </div>   
+        
+        
+   <div class="folderContent t3 hidden"><p>Third folder: Per at vero honestatis adversarium, no vim assum mundi essent. Recusabo intellegat ut sea, no nibh debitis sed. Duo at elit viris, nec soluta bonorum at, persius placerat vix in. Ei ornatus referrentur efficiantur duo, eu consul phaedrum per. Inimicus honestatis pro id, per id iusto bonorum blandit, vel melius necessitatibus an. Ei legendos urbanitas cum, quod atqui mea at, nec tota comprehensam ad.</p>
+
+<p>Ut mei dico viderer disputando. Te alterum delicatissimi mel. His affert nonumes an. Meliore theophrastus vis in, ex vis option similique. Ut sed ridens dignissim delicatissimi, an fabulas sensibus mandamus has.</p>
+
+<p>Graece impetus ea nec. Tota soleat intellegebat eos ne. Eos at ignota mucius, quo minim inciderint cu. Te aliquip facilis mea, mea soleat facilisi no. Vis ceteros nusquam praesent ut. Nam integre omittam indoctum in, te vix labitur eleifend dissentiet.</p>
+        </div>
+                    
+    </div>    
+</body>    
+</html>

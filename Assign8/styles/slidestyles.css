@@ -1,0 +1,38 @@
+body { 
+    background-color: #8cc7c9;
+    font-family: sans-serif;
+}
+h1 {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#images {
+    width: 900px;
+    height: 600px;
+    margin-top: 25px;
+    border: 2px solid gray;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#count {
+    border: 2px solid gray;
+    text-align: center;
+    padding: 20px;
+    font-size: 2.5em;
+}
+ 
+a {
+    text-decoration: none;
+    color: black;
+    padding: 12px;
+}
+
+a:hover {
+    color: #679ca3;
+}
+
+a.start {
+    color: aliceblue;
+}
